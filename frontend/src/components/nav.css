@@ -1,0 +1,184 @@
+/* Nav.css */
+
+/* Navbar Container */
+.navbar {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Container */
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
+  
+  /* Logo */
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  /* Menu */
+  .menu ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .menu li {
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+  
+  /* Dropdown styles */
+  .dropdown .submenu {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    z-index: 1;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    top: 100%;
+    left: 0;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  .dropdown:hover .submenu {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .submenu li {
+    padding: 10px;
+  }
+  
+  /* Mobile menu styles */
+  .menu-button {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+  }
+  
+  .bar {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+    transition: 0.4s;
+  }
+  
+  /* Hover Effects */
+  .menu li:hover {
+    color: #24a5f6; /* Change color on hover */
+  }
+  
+  .logo:hover {
+    color: #1490f6; /* Change color on hover */
+  }
+  .menu-button {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 10px;
+}
+
+@media (max-width: 768px) {
+  .menu-button {
+    display: flex;
+  }
+
+  .menu-button .bar {
+    background-color: white;
+    width: 25px;
+    height: 3px;
+    margin: 4px 0;
+    transition: 0.4s;
+  }
+  .navbar{
+
+ display: flex;
+ flex-wrap: wrap;
+ overflow: auto;
+  }
+  .menu ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+}
+  /* Add more hover effects as needed */
+  
+  /* Nav.css */
+
+/* ... (previous styles) ... */
+
+/* Mobile menu styles */
+.menu-button {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  .menu {
+    display: none;
+  }
+  
+  .open .menu {
+    display: block;
+  }
+  /* Nav.css */
+
+/* ... (previous styles) ... */
+
+/* Mobile menu styles */
+.menu-button {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+  }
+  
+  .menu {
+    display: none;
+  }
+  
+  .open .menu {
+    display: block;
+  }
+  
+  /* Media query for large screens */
+  @media (min-width: 768px) {
+    .menu {
+      display: block;
+    }
+    
+    .menu-button {
+      display: none;
+    }
+  }
+  
+  /* ... (remaining styles) ... */
+  
+  /* ... (remaining styles) ... */
+  
+
