@@ -2,7 +2,7 @@ import { GoogleLogout } from "react-google-login";
 import { useNavigate } from 'react-router-dom';
 
 import { useAlert } from 'react-alert'
-const clientId="951484766563-lfmsd1f0sksgli8d5nnrk9nln1g8rh8f.apps.googleusercontent.com"
+const clientId=""
 function Logout() {
     const navigate=useNavigate();
     const alert =useAlert();
