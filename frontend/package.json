@@ -4,6 +4,7 @@
   "private": true,
   "proxy": "http://localhost:5000",
   "dependencies": {
+    "@chatscope/chat-ui-kit-react": "^1.10.1",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.14.8",
@@ -20,6 +21,7 @@
     "react-dom": "^18.2.0",
     "react-google-login": "^5.2.2",
     "react-icons": "^4.11.0",
+    "react-responsive-carousel": "^3.2.23",
     "react-scripts": "5.0.1",
     "redux": "^4.2.1",
     "redux-devtools-extension": "^2.13.9",

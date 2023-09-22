@@ -1,123 +1,102 @@
-import React from 'react'
-import {FaArrowAltCircleLeft, FaArrowLeft, FaGoogle, FaRegGrinTongueSquint, FaUpload} from "react-icons/fa";
-import { useState } from 'react';
+import React, { useState } from 'react';
+import { FaGoogle } from "react-icons/fa";
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 function Home() {
+  // ... (your data and functions remain the same)
+  const cards = [
+    {
+      id: 1,
+      imageSrc: 'https://optinmonster.com/wp-content/themes/optinmonster-theme/assets/sept-2019-landing/images/icon-drag.svg',
+      title: 'Bridging Talent Horizons',
+      description:
+        'We bridge the gap between rising talents and developed nations, providing competitive pricing and fostering global careers. Our journey spans from India to the world, exploring the best in Accounts and Finance. Join us in unlocking the true potential of Indian IT excellence.',
+    },
+    {
+      id: 2,
+      imageSrc: 'https://optinmonster.com/wp-content/themes/optinmonster-theme/assets/sept-2019-landing/images/icon-drag.svg',
+      title: "India's Skilled Workforce",
+      description:
+        "India boasts a rich pool of highly skilled professionals, a testament to our exceptional educational infrastructure. At Toriox, we've harnessed this powerful combination of technology and top-tier talent. In a world driven by efficiency and cost-effectiveness, we help you redefine your success story.",
+    },
+    {
+      id: 3,
+      imageSrc: 'https://optinmonster.com/wp-content/themes/optinmonster-theme/assets/sept-2019-landing/images/icon-drag.svg',
+      title: 'Partnering for Growth',
+      description:
+        "At Toriox, we're more than consultants; we're growth partners. We empower companies to sharpen their focus, implement cutting-edge technologies, and optimize operational costs. Join our journey of success, and let's share the risks and rewards together.",
+    },
+    {
+      id: 4,
+      imageSrc: 'https://optinmonster.com/wp-content/themes/optinmonster-theme/assets/sept-2019-landing/images/icon-drag.svg',
+      title: 'Building Relationships',
+      description:
+        "The Toriox family values collaboration. We've had the privilege of serving esteemed clients, and we're eager to support many more. Join hands with us as we build a happier working world together. Your success is our commitment.",
+    },
+    {
+      id: 5,
+      imageSrc: 'https://optinmonster.com/wp-content/themes/optinmonster-theme/assets/sept-2019-landing/images/icon-drag.svg',
+      title: 'Cost-Efficiency Solution',
+      description:
+        "In the global era of intelligent cost management, Toriox offers innovative solutions to lower wage bills and introduce efficient technologies. We're your strategic ally, ensuring your operations are lean and cost-effective, leading to enhanced profitability.",
+    },
+    {
+      id: 6,
+      imageSrc: 'https://optinmonster.com/wp-content/themes/optinmonster-theme/assets/sept-2019-landing/images/icon-drag.svg',
+      title: ' Global Reach, Local Excellence',
+      description:
+        "Toriox is your gateway to global success. Our reach spans the US, UK, Canada, Australia, and beyond, while our commitment to quality remains rooted in India. Trust us to bring the best of both worlds to your business endeavors.",
+    },
 
-    const cards = [
-        {
-          id: 1,
-          imageSrc: 'https://optinmonster.com/wp-content/themes/optinmonster-theme/assets/sept-2019-landing/images/icon-drag.svg',
-          title: 'Card 1',
-          description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel est a nulla consectetur tempor.',
-        },
-        {
-          id: 2,
-          imageSrc: 'https://optinmonster.com/wp-content/themes/optinmonster-theme/assets/sept-2019-landing/images/icon-drag.svg',
-          title: 'Card 2',
-          description:
-            'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.',
-        },
-        {
-          id: 3,
-          imageSrc: 'https://optinmonster.com/wp-content/themes/optinmonster-theme/assets/sept-2019-landing/images/icon-drag.svg',
-          title: 'Card 3',
-          description:
-            'Nunc et ex non dui malesuada tincidunt in non urna. Ut eu libero vel dui dictum euismod.',
-        },
-        {
-          id: 4,
-          imageSrc: 'https://optinmonster.com/wp-content/themes/optinmonster-theme/assets/sept-2019-landing/images/icon-drag.svg',
-          title: 'Card 4',
-          description:
-            'Vivamus auctor, odio vel euismod tincidunt, dui quam lacinia leo, et malesuada tellus orci at tellus.',
-        },
-        {
-          id: 5,
-          imageSrc: 'https://optinmonster.com/wp-content/themes/optinmonster-theme/assets/sept-2019-landing/images/icon-drag.svg',
-          title: 'Card 5',
-          description:
-            'Pellentesque eu justo justo. In hac habitasse platea dictumst. Etiam lacinia elit nec vehicula.',
-        },
-        {
-          id: 6,
-          imageSrc: 'https://optinmonster.com/wp-content/themes/optinmonster-theme/assets/sept-2019-landing/images/icon-drag.svg',
-          title: 'Card 6',
-          description:
-            'Fusce sit amet massa vel dolor ultrices vehicula a in erat. Nunc sit amet mattis est, nec commodo purus.',
-        },
-        {
-          id: 7,
-          imageSrc: 'https://optinmonster.com/wp-content/themes/optinmonster-theme/assets/sept-2019-landing/images/icon-drag.svg',
-          title: 'Card 7',
-          description:
-            'Curabitur dignissim, elit eu vehicula efficitur, ante tellus faucibus eros, at efficitur mi justo et sapien.',
-        },
-        {
-          id: 8,
-          imageSrc: 'https://optinmonster.com/wp-content/themes/optinmonster-theme/assets/sept-2019-landing/images/icon-drag.svg',
-          title: 'Card 8',
-          description:
-            'Vestibulum euismod a quam eget tincidunt. Maecenas non vestibulum urna, nec aliquam turpis.',
-        },
-        {
-          id: 9,
-          imageSrc: 'https://optinmonster.com/wp-content/themes/optinmonster-theme/assets/sept-2019-landing/images/icon-drag.svg',
-          title: 'Card 9',
-          description:
-            'In sit amet convallis odio. Vivamus venenatis vulputate urna vel fringilla. Sed in quam nec est.',
-        },
-      ];
+  ];
 
-    const cardsData = [
-        {
-          id: 1,
-          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          name: 'John Doe',
-          rating: 5,
-          imageSrc: 'https://optinmonster.com/wp-content/themes/optinmonster-theme/assets/sept-2019-landing/images/icon-drag.svg',
-        },
-        {
-          id: 2,
-          text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.',
-          name: 'Jane Smith',
-          rating: 4,
-          imageSrc: 'https://optinmonster.com/wp-content/themes/optinmonster-theme/assets/sept-2019-landing/images/icon-drag.svg',
-        },
-      ];
+const cardsData = [
 
-    const [selectedOption, setSelectedOption] = useState('option1');
+    {
+      id: 2,
+      text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.',
+      name: 'Jane Smith',
+      rating: 4,
+      imageSrc: 'https://optinmonster.com/wp-content/themes/optinmonster-theme/assets/sept-2019-landing/images/icon-drag.svg',
+    },
+  ];
 
-    const options = [
-        { id: 'option1', text: 'grow your email list', color: 'white' },
-        { id: 'option2', text: 'Capture more leads', color: 'white' },
-        { id: 'option3', text: 'Increase sales conversion', color: 'white' },
-        { id: 'option4', text: 'Reduce cart abandonment', color: 'white' },
-        { id: 'option5', text: 'Show target offers', color: 'white' },
-        { id: 'option6', text: 'Get more pageview', color: 'white' },
-      ];
+const [selectedOption, setSelectedOption] = useState('option1');
 
-      const handleClick = (divId) => {
-        if (selectedOption === divId) {
-            // If the same div is clicked again, reset the selection
-            setSelectedOption(null);
-          } else {
-            setSelectedOption(divId);
-          }
-        
-      };
+const options = [
+    { id: 'option1', text: 'grow your email list', color: 'white' },
+    { id: 'option2', text: 'Capture more leads', color: 'white' },
+    { id: 'option3', text: 'Increase sales conversion', color: 'white' },
+
+  ];
+
+  const handleClick = (divId) => {
+    if (selectedOption === divId) {
+        // If the same div is clicked again, reset the selection
+        setSelectedOption(null);
+      } else {
+        setSelectedOption(divId);
+      }
+    };
+    const images = [
+      'image1.jpg',
+      'image2.jpg',
+      'image3.jpg',
+      // Add more image URLs as needed
+    ];
 
   return (
     <section>
-      <div className=''>
-        <FaGoogle className='m-3 mt-20 text-center text-6xl mx-auto'></FaGoogle>
-        <h1 className='my-6 font-black w-96 text-center mx-auto text-4xl'>Easy and powerful to drive huge results</h1>
-        <p className='my-6 text-xl w-3/5 mx-auto text-center'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum quo fuga consequatur eaque nobis cumque quibusdam excepturi, ab pariatur nesciunt!Loremoin seantium tempora neque, numquam animi. Maiores saepe, illum commodi, exercitationem non reprehenderit dolor tenetur dignissimos iure molestias ipsa corporis consequuntur ea.</p>
-        <div className=' text-blue-400 my-6 mx-auto w-60'><a href="">See our proven 3-step process</a></div>
+      <div className='text-center'>
+        <FaGoogle className='m-3 mt-20 text-6xl mx-auto'></FaGoogle>
+        <h1 className='my-6 font-black text-4xl lg:text-6xl'>Easy and powerful to drive huge results</h1>
+        <p className='my-6 text-xl lg:text-2xl w-4/5 lg:w-3/5 mx-auto'>Lorem ipsum dolor sit, amet consectetur adipisicing elit...</p>
+        <div className='text-blue-400 my-6 mx-auto'><a href="">See our proven 3-step process</a></div>
       </div>
-      <div className='text-center bg-white my-20 h-auto w-10/12 rounded-lg mx-auto'>
-        <div className='flex w-full justify-evenly text-center'>
+      
+      <div className='bg-white my-20 rounded-lg mx-auto'>
+      <div className='flex w-full justify-evenly text-center'>
             {options.map((option) => (
                 <div
                 id={option.id}
@@ -128,163 +107,165 @@ function Home() {
                 </div>
             ))}
         </div>
-        <div style={{display: selectedOption === 'option1' ? 'block' : 'none',}}>
-        <h2 className=' text-2xl mx-auto w-7/12 my-8'>Turn visitors into subscribers with beautiful, attention grabbing optin forms that are proven to convert.</h2>
-        <div>
-            <img className=' my-8 mx-auto w-7/12' src="https://optinmonster.com/wp-content/themes/optinmonster-theme/assets/sept-2019-landing/images/grow.png" alt="" />
-        </div>
-        </div>
-        <div style={{display: selectedOption === 'option2' ? 'block' : 'none'}}>
-        <h2 className=' text-2xl mx-auto w-7/12 my-8'>Fill your pipeline with qualified leads that are ready to take the next step with your business.</h2>
-        <div>
-            <img className=' my-8 mx-auto w-7/12' src="https://optinmonster.com/wp-content/themes/optinmonster-theme/assets/sept-2019-landing/images/capture.png" alt="" />
-        </div>
-        </div>
-        <div style={{display: selectedOption === 'option3' ? 'block' : 'none'}}>
-        <h2 className=' text-2xl mx-auto w-7/12 my-8'>Display relevant promotions to improve your sales conversion rate and drive more revenue from your existing website traffic.</h2>
-        <div>
-            <img className=' my-8 mx-auto w-7/12' src="https://optinmonster.com/wp-content/themes/optinmonster-theme/assets/sept-2019-landing/images/increase.png" alt="" />
-        </div>
-        </div>
-        <div style={{display: selectedOption === 'option4' ? 'block' : 'none'}}>
-        <h2 className=' text-2xl mx-auto w-7/12 my-8'>Detect visitors who are about to leave without buying and recover them with an additional offer.</h2>
-        <div>
-            <img className=' my-8 mx-auto w-7/12' src="https://optinmonster.com/wp-content/themes/optinmonster-theme/assets/sept-2019-landing/images/reduce.png" alt="" />
-        </div>
-        </div>
-        <div style={{display: selectedOption === 'option5' ? 'block' : 'none'}}>
-        <h2 className=' text-2xl mx-auto w-7/12 my-8'>Segment your promotions to new or returning visitors to maximize revenue growth from all audiences.</h2>
-        <div>
-            <img className=' my-8 mx-auto w-7/12' src="https://optinmonster.com/wp-content/themes/optinmonster-theme/assets/sept-2019-landing/images/targeted.png" alt="" />
-        </div>
-        </div>
-        <div style={{display: selectedOption === 'option6' ? 'block' : 'none'}}>
-        <h2 className=' text-2xl mx-auto w-7/12 my-8'>Increase engagement by driving traffic to high value pages on your website while reducing overall bounce rate.</h2>
-        <div>
-            <img className=' my-8 mx-auto w-7/12' src="https://optinmonster.com/wp-content/themes/optinmonster-theme/assets/sept-2019-landing/images/pageviews.png" alt="" />
-        </div>
-        </div>
+    
+        
       </div>
-      <div className="flex justify-evenly m-28 ">
-        {cardsData.map((card) => (
-            <div key={card.id} className="w-4/5 m-4 border rounded-lg p-4">
-            <p>{card.text}</p>
-            <div className="flex items-center mt-2">
-                <img
-                src={card.imageSrc}
-                alt="Profile"
-                className="w-4 h-4 rounded-full mr-2"
-                />
-                <h1>{card.name}</h1>
-            </div>
-            </div>
-        ))}
+
+      <div className="flex flex-col lg:flex-row justify-evenly mx-4 lg:mx-40">
+        {/* Sample Content: Replace with your own */}
+        <div className="lg:w-1/2 mx-7">
+          <h2 className="text-xl">Global Workforce Solutions</h2>
+          <p className="ha">Unlock Prosperity: Toriox is more than an idea; it's a global vision. We facilitate wealth creation by connecting rising talents worldwide with developed nations, offering cost-effective solutions. Our journey extends from India to the shores of the US, UK, Canada, Australia, and beyond. We're dedicated to understanding the Indian IT narrative and tapping into the best talent pools in Accounts and Finance.</p>
         </div>
-      <div className='m-10'>
-        <h1 className='my-5 font-black w-8/12 text-center mx-auto text-4xl'>Finally, a Lead Generation and Conversion Optimization Software That's Both Easy AND Powerful!</h1>
-        <p className='my-5 text-xl w-4/5 mx-auto text-center'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum quo fuga consequatur eaque nobis cumque quibusdam excepturi, ab pariatur nesciunt!Loremoin seantium tempora neque, numquam animi. Maiores saepe, illum commodi, exercitationem non reprehenderit dolor tenetur dignissimos iure molestias ipsa corporis consequuntur ea.</p>
-      </div>
-      <div className="grid grid-cols-3 gap-10 my-28 mx-40">
-      {cards.map((card) => (
-        <div key={card.id} className="bg-whitesmoke text-center p-4">
-          <img
-            src={card.imageSrc}
-            alt={`Card ${card.id}`}
-            className="w-20 mx-auto h-20 object-cover rounded-lg"
-          />
-          <h2 className="text-xl font-semibold mt-4">{card.title}</h2>
-          <p className="text-gray-600 mt-2">{card.description}</p>
-        </div>
-      ))}
-    </div>
-    <div className='m-10 my-10'>
-        <img className='w-20 mx-auto h-20 object-cover rounded-lg' src="https://optinmonster.com/wp-content/themes/optinmonster-theme/assets/sept-2019-landing/images/icon-flag.svg" alt="" />
-        <h1 className='my-6 font-black w-8/12 text-center mx-auto text-4xl'>Top 4 Reasons Why Smart Marketers, Business Owners and Agencies Love OptinMonster…and You Will Too!</h1>
-        <p className='my-6 text-xl w-4/5 mx-auto text-center'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum quo fuga consequatur eaque nobis cumque quibusdam excepturi, ab pariatur nesciunt!Loremoin seantium tempora neque, numquam animi. Maiores saepe, illum commodi, exercitationem non reprehenderit dolor tenetur dignissimos iure molestias ipsa corporis consequuntur ea.</p>
-      </div>
-      <div className=" flex justify-evenly mx-40 my-32">
-        <div className='w-full'>
-            <img className=' mx-auto my-auto h-auto' src="https://optinmonster.com/wp-content/themes/optinmonster-theme/assets/sept-2019-landing/images/img03.png" alt="" />
-        </div>
-        <div className=''>
-            <h1 className='my-6 font-black w-4/5 mx-auto text-3xl'>Grow Faster by Using Easier & Better</h1>
-            <p className='my-6 w-4/5 mx-auto'>Fast-track your growth with software that works for you, not against you.
-            Easily create, publish and A/B test beautiful lead capture forms that generate impressive results - all without needing a developer or writing a single line of code.</p>
-            <div className='flex mx-16'>
-            <div className=''>
-            <ul>
-                <li className='m-1 ml-5 list-disc'>Lightbox Popups</li>
-                <li className='m-1 ml-5 list-disc'>Floating Hello Bars</li>
-                <li className='m-1 ml-5 list-disc'>Inline / After Post Forms</li>
-                <li className='m-1 ml-5 list-disc'>Spin-a-Wheel Gamified Campaigns</li>
-            </ul> 
-            </div>
-            <div>
-            <ul>
-                <li className='m-1 ml-7 list-disc'>Fullscreen Welcome Mats</li>
-                <li className='m-1 ml-7 list-disc'>Mobile Specific Forms</li>
-                <li className='m-1 ml-7 list-disc'>Slide-in Scroll Boxes</li>
-                <li className='m-1 ml-7 list-disc'>100+ Pre-Made Templates</li>
-            </ul> 
-            </div>
-            </div>                    
-        </div>
-      </div>
-      <div className=" flex justify-evenly mx-40 my-32">
-        <div className=''>
-            <h1 className='my-6 font-black w-4/5 mx-auto text-3xl'>Custom Design That Matches Your Style and Brand</h1>
-            <p className='my-6 w-4/5 mx-auto'>Quickly customize the look and feel of any template in our library. Choose from over 100 pre-made templates designed for maximum conversions, or start from scratch with a blank canvas. Customize all the details with our easy to use drag-and-drop builder - no code needed.</p>
-                               
-        </div>
-        <div className='w-full'>
-            <img className=' mx-auto my-auto h-auto' src="https://optinmonster.com/wp-content/themes/optinmonster-theme/assets/sept-2019-landing/images/img04.png" alt="" />
-        </div>
-        </div>
-      <div className=" flex justify-evenly mx-40 my-32">
-        <div className='w-full'>
-            <img className=' mx-auto my-auto h-auto' src="https://optinmonster.com/wp-content/themes/optinmonster-theme/assets/sept-2019-landing/images/img06.png" alt="" />
-        </div>
-        <div className=''>
-            <h1 className='my-6 font-black w-4/5 mx-auto text-3xl'>Show Personalized Messages to the Right People at the Right Time</h1>
-            <p className='my-6 w-4/5 mx-auto'>OptinMonster’s enterprise-grade targeting and segmentation engine lets you show personalized, relevant messages to your visitors based on their behavior to maximize lead, subscriber and sales growth across every page of your website.</p>
-            <div className='flex mx-16'>
-            <div className=''>
-            <ul>
-                <li className='m-1 ml-5 list-disc'>Superior Page Targeting</li>
-                <li className='m-1 ml-5 list-disc'>Personalized Smart Tags™</li>
-                <li className='m-1 ml-5 list-disc'>Exit Intent® Technology</li>
-                <li className='m-1 ml-5 list-disc'>Scheduled Messages</li>
-            </ul> 
-            </div>
-            <div>
-            <ul>
-                <li className='m-1 ml-7 list-disc'>Onsite Follow Up Campaigns®</li>
-                <li className='m-1 ml-7 list-disc'>Geo-Location Targeting</li>
-                <li className='m-1 ml-7 list-disc'>OnSite Retargeting®</li>
-            </ul> 
-            <a href="" className=' text-blue-400 m-1 ml-7'>click to see more</a>
-            </div>
-            </div>                    
-        </div>
-      </div>
-      <div className=" flex justify-evenly mx-40 my-32">
-        <div className=''>
-            <h1 className='my-6 font-black w-4/5 mx-auto text-3xl'>Make Smarter, Data-Driven Decisions</h1>
-            <p className='my-6 w-4/5 mx-auto'>Eliminate the “guess work” by testing different headlines, content, images and calls to action with OptinMonster’s easy A/B testing tool. Then, get the stats that matter and make the best decisions to grow your business with detailed campaign performance and analytics.</p>
-            </div>
-        <div className='w-full'>
-            <img className=' mx-auto my-auto h-auto' src="https://optinmonster.com/wp-content/themes/optinmonster-theme/assets/sept-2019-landing/images/img07.png" alt="" />
-        </div>
+        <div className="lg:w-1/2">
+          <h2 className="text-xl">Technology and Quality Workforce</h2>
+          <p className="ha">India's Finest: India's exceptional educational infrastructure has nurtured a highly skilled workforce. Toriox champions the fusion of technology and quality personnel, proving the potential of India's capabilities on the global stage. As the world seeks smarter solutions to reduce costs and enhance efficiency, we empower companies to achieve their goals and share risks with partner firms.</p>
         </div>
 
-        <div className='m-10'>
-        <h1 className='my-5 font-black w-8/12 text-center mx-auto text-4xl'>...and One Click Integration with Your Favorite Email Marketing Service or CRM Software</h1>
-        <p className='text-xl w-4/5 mx-auto text-center'>Seamlessly integrate with MailChimp, AWeber, HubSpot, Klaviyo and 30+ more services.</p>
-        <p className='text-xl w-4/5 mx-auto text-center'>BONUS: any custom HTML form and webhooks!</p>
+      </div>
+
+      <div className='m-10'>
+        {/* Sample Content: Replace with your own */}
+        <h1 className='my-5 font-black text-4xl lg:text-6xl text-center'>Empowering Global Success</h1>
+        {/* <p className='my-5 text-xl lg:text-2xl w-4/5 lg:w-3/5 mx-auto text-center'>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p> */}
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 my-8 mx-4 lg:mx-40">
+        {/* Sample Content: Replace with your own */}
+        {cards.map((card) => (
+          <div key={card.id} className="bg-white rounded-lg p-4">
+            <img
+              src={card.imageSrc}
+              alt={`Card ${card.id}`}
+              className="w-20 mx-auto h-20 object-cover rounded-lg"
+            />
+            <h2 className="text-xl font-semibold mt-4">{card.title}</h2>
+            <p className="text-gray-600 mt-2">{card.description}</p>
+          </div>
+        ))}
+      </div>
+
+      <div className='m-10 my-10'>
+        {/* Sample Content: Replace with your own */}
+        <h1 className='my-5 font-black text-4xl lg:text-6xl text-center'>Section Title</h1>
+        <p className='my-5 text-xl lg:text-2xl w-4/5 lg:w-3/5 mx-auto text-center'>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      </div>
+
+      <div className="flex flex-col md:flex-row justify-evenly mx-4 lg:mx-40 my-8">
+        {/* Sample Content: Replace with your own */}
+        <div className=''>
+          <h1 className='my-6 font-black w-4/5 mx-auto text-3xl'>Feature Title 1</h1>
+          <p className='my-6 w-4/5 mx-auto'>Feature details 1...</p>
+          {/* ... (more content here) */}
         </div>
+        <div className='w-full'>
+          <img className='mx-auto my-auto h-auto' src="https://optinmonster.com/wp-content/themes/optinmonster-theme/assets/sept-2019-landing/images/img03.png" alt="" />
+        </div>
+      </div>
+
+      <div className="flex flex-col md:flex-row justify-evenly mx-4 lg:mx-40 my-8">
+        {/* Sample Content: Replace with your own */}
+        <div className='w-full'>
+          <img className='mx-auto my-auto h-auto' src="https://optinmonster.com/wp-content/themes/optinmonster-theme/assets/sept-2019-landing/images/img04.png" alt="" />
+        </div>
+        <div className=''>
+          <h1 className='my-6 font-black w-4/5 mx-auto text-3xl'>Feature Title 2</h1>
+          <p className='my-6 w-4/5 mx-auto'>Feature details 2...</p>
+          {/* ... (more content here) */}
+        </div>
+      </div>
+
+      <div className="flex flex-col md:flex-row justify-evenly mx-4 lg:mx-40 my-8">
+        {/* Sample Content: Replace with your own */}
+        <div className=''>
+          <h1 className='my-6 font-black w-4/5 mx-auto text-3xl'>Feature Title 3</h1>
+          <p className='my-6 w-4/5 mx-auto'>Feature details 3...</p>
+          {/* ... (more content here) */}
+        </div>
+        <div className='w-full'>
+          <img className='mx-auto my-auto h-auto' src="https://optinmonster.com/wp-content/themes/optinmonster-theme/assets/sept-2019-landing/images/img06.png" alt="" />
+        </div>
+      </div>
+
+      <div className="flex flex-col md:flex-row justify-evenly mx-4 lg:mx-40 my-8">
+        {/* Sample Content: Replace with your own */}
+        <div className='w-full'>
+          <img className='mx-auto my-auto h-auto' src="https://optinmonster.com/wp-content/themes/optinmonster-theme/assets/sept-2019-landing/images/img07.png" alt="" />
+        </div>
+        <div className=''>
+          <h1 className='my-6 font-black w-4/5 mx-auto text-3xl'>Feature Title 4</h1>
+          <p className='my-6 w-4/5 mx-auto'>Feature details 4...</p>
+          {/* ... (more content here) */}
+        </div>
+      </div>
+
+      <div className='m-10'>
+        {/* Sample Content: Replace with your own */}
+       
+      </div>
+
+      <div className='my-18'>
+        {/* Sample Content: Replace with your own */}
+        <div className="bg-blue-500 text-white p-8 rounded-lg text-center">
+          <h2 className="text-3xl font-semibold">Get Started Today!</h2>
+          <p className="text-xl mt-4">Join our community and start optimizing your conversions.</p>
+          <button className="bg-white text-blue-500 font-semibold px-6 py-2 rounded-full mt-6"><a href="/register">Sign Up</a>
+          </button>
+        </div>
+      </div>
+
+      <div className='m-10'>
+        {/* Sample Content: Replace with your own */}
+        
+      </div>
+
+      <div className='flex justify-evenly mx-4 lg:mx-72'>
+        {/* Sample Content: Replace with your own */}
+        <div className='text-center'>
+          <div>    <h2 className='text-3xl font-semibold'>Testimonials</h2></div>
       
-      </section>
+          <p className='text-xl mt-4'>See what our customers are saying...
+          </p>
+        </div>
+        {/* ... (testimonial cards or content here) */
+          <div className='text-center'>
+          <h2 className='text-2xl font-semibold'>By Sarah Johnson
+⭐⭐⭐⭐⭐</h2>
+          <p className='text-l mt-4'>Toriox has been instrumental in helping our company expand its operations. Their focus on efficiency and cost reduction strategies is unmatched. We've seen a significant improvement in our bottom line since partnering with them</p>
+        </div>
+        }
+         {/* ... (testimonial cards or content here) */
+          <div className='text-center'>
+          <h2 className='text-2xl font-semibold'>By Michael Davis
+          ⭐⭐⭐⭐⭐</h2>
+          <p className='text-l mt-4'>I can't thank Toriox enough for their support. They've helped us tap into India's incredible talent pool, and our workforce has never been stronger. The results speak for themselves, and our clients are noticing the difference.</p>
+        </div>
+        }
+         {/* ... (testimonial cards or content here) */
+          <div className='text-center'>
+          <h2 className='text-2xl font-semibold'>By Emily Clark
+⭐⭐⭐⭐⭐</h2>
+          <p className='text-l mt-4'>Toriox's dedication to building relationships is truly remarkable. Their team goes above and beyond to ensure our success. It's more than a partnership; it's a collaboration built on trust and mutual growth.</p>
+        </div>
+        }
+         {/* ... (testimonial cards or content here) */
+          <div className='text-center'>
+          <h2 className='text-2xl font-semibold'>By James Wilson
+          ⭐⭐⭐⭐</h2>
+          <p className='text-l mt-4'>Toriox's cost-effective technologies have revolutionized our operations. We're now more competitive than ever. Their solutions are tailored to our needs and have significantly improved our efficiency.</p>
+        </div>
+        }
+         {/* ... (testimonial cards or content here) */
+          <div className='text-center'>
+          <h2 className='text-2xl font-semibold'>By Daniel Smith
+⭐⭐⭐⭐⭐</h2>
+          <p className='text-l mt-4'> Choosing Toriox was one of the best decisions we made for our company. Their ability to reduce costs while maintaining quality is impressive. They've become an integral part of our success story.</p>
+        </div>
+        }
+         
+      </div>
+    </section>
   )
 }
 
-export default Home
+export default Home;

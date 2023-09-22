@@ -9,10 +9,13 @@ import { Rating } from '@mui/material'
 import Footer from './Footer'
 import {Link} from 'react-router-dom'
 import Lakshyahome from './LakhyaHome'
+import Chatbot from './chatBot'
 function Home() {
     return (
        <Fragment>
+           
         <Nav></Nav>
+   
         <div class="context">
         <div className="homeContainer">
             <div className="box">
@@ -43,7 +46,7 @@ Meet some of the 16,000 sales teams that move business forward with TorioxLead.
          </div>
     </div>
 
-
+    <Chatbot/>
 <div class="area" >
             <ul class="circles">
                     <li></li>

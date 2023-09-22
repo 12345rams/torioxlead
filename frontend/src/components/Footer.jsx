@@ -6,21 +6,15 @@ import iosstore from '../images/app.png'
 function footer() {
     return (
         <footer>
-         <div className="leftFooter">
-         <h4>DOWNLOAD OUR APP</h4>
-        <p>Download App for Android and IOS mobile phone</p>
-        <GetAppIcon />
-         < img src={iosstore} alt=""  width="200px"/>
-        <img src={playstore} alt="" width="200px"/>
-         </div>
+  
          <div className="midFooter">
-         <h1>TorioxLead</h1>
+         <h1 className="Ha">TorioxLead</h1>
         <p>High Quality is our first priority</p>
         <p>100k people liked our services</p>
         <p>Copyrights 2023 &copy; Toriox</p>
          </div>
          <div className="midFooter">
-         <h1>Services</h1>
+         <h1 className="Ha">Services</h1>
         <p>SEO Services</p>
         <p ><a href="/start">Portal</a></p>
         <p>Chatbots and Live Chat</p>

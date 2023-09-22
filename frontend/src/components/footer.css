@@ -11,7 +11,7 @@ footer{
 }
 footer >div{
     flex-direction: column;
-    margin: 3vmax;
+    margin: 1vmax;
 }
 footer >div >img{
     width: 4vmax;
@@ -27,11 +27,12 @@ footer >div >a {
 }
 @media screen and (max-width: 600px) {
     h1 {
-      font-size: larger;
+      font-size: medium;
     }
     footer{
-        font-size: small;
+        font-size: .9rem;
     }
+    
 }
 .banner::after{
     content: "";

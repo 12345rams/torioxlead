@@ -21,8 +21,7 @@ function App() {
         <Route path="/login" element={<Lead />} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/register" element={<Register />} />
-    <Route path="/portal" element={islogin?<Portal />:<Lead />} />
-
+        <Route path="/portal" element={islogin?<Portal />:<Lead />} />
         <Route path="/add" element={<AddToList />} />
         <Route path="/start" element={<StartWith />} />
         <Route path="/chat" element={<ChatBot />} />
