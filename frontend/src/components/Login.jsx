@@ -74,7 +74,7 @@ export default function Login() {
           </h2>
           <div className="rounded-full mx-12 my-3 w-52 text-center btn">
             <GoogleLogin
-              clientId="951484766563-lfmsd1f0sksgli8d5nnrk9nln1g8rh8f.apps.googleusercontent.com"
+              clientId=""
               buttonText="Login"
               onSuccess={onSuccess}
               onFailure={onFailure}
