@@ -73,6 +73,7 @@ export default function Login() {
             Login With Google
           </h2>
           <div className="rounded-full mx-12 my-3 w-52 text-center btn">
+          {/* // add clientId here */}
             <GoogleLogin
               clientId=""
               buttonText="Login"
