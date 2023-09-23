@@ -227,43 +227,7 @@ const options = [
           <p className='text-xl mt-4'>See what our customers are saying...
           </p>
         </div>
-        {/* ... (testimonial cards or content here) */
-          <div className='text-center'>
-          <h2 className='text-2xl font-semibold'>By Sarah Johnson
-⭐⭐⭐⭐⭐</h2>
-          <p className='text-l mt-4'>Toriox has been instrumental in helping our company expand its operations. Their focus on efficiency and cost reduction strategies is unmatched. We've seen a significant improvement in our bottom line since partnering with them</p>
-        </div>
-        }
-         {/* ... (testimonial cards or content here) */
-          <div className='text-center'>
-          <h2 className='text-2xl font-semibold'>By Michael Davis
-          ⭐⭐⭐⭐⭐</h2>
-          <p className='text-l mt-4'>I can't thank Toriox enough for their support. They've helped us tap into India's incredible talent pool, and our workforce has never been stronger. The results speak for themselves, and our clients are noticing the difference.</p>
-        </div>
-        }
-         {/* ... (testimonial cards or content here) */
-          <div className='text-center'>
-          <h2 className='text-2xl font-semibold'>By Emily Clark
-⭐⭐⭐⭐⭐</h2>
-          <p className='text-l mt-4'>Toriox's dedication to building relationships is truly remarkable. Their team goes above and beyond to ensure our success. It's more than a partnership; it's a collaboration built on trust and mutual growth.</p>
-        </div>
-        }
-         {/* ... (testimonial cards or content here) */
-          <div className='text-center'>
-          <h2 className='text-2xl font-semibold'>By James Wilson
-          ⭐⭐⭐⭐</h2>
-          <p className='text-l mt-4'>Toriox's cost-effective technologies have revolutionized our operations. We're now more competitive than ever. Their solutions are tailored to our needs and have significantly improved our efficiency.</p>
-        </div>
-        }
-         {/* ... (testimonial cards or content here) */
-          <div className='text-center'>
-          <h2 className='text-2xl font-semibold'>By Daniel Smith
-⭐⭐⭐⭐⭐</h2>
-          <p className='text-l mt-4'> Choosing Toriox was one of the best decisions we made for our company. Their ability to reduce costs while maintaining quality is impressive. They've become an integral part of our success story.</p>
-        </div>
-        }
-         
-      </div>
+     
     </section>
   )
 }
